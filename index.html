@@ -267,35 +267,33 @@
       }
     }
 
-    .typing-effect {
-      border-right: 3px solid;
-      white-space: nowrap;
-      overflow: hidden;
-      animation: typing 3.5s steps(30, end),
-        blink-caret 0.75s step-end infinite;
-    }
+.typing-effect {
+  border-right: 3px solid #764ba2;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: 
+    typing 3.5s steps(30, end) forwards,
+    blink-caret 3.5s step-end forwards;
+}
 
-    @keyframes typing {
-      from {
-        width: 0;
-      }
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
 
-      to {
-        width: 100%;
-      }
-    }
+@keyframes blink-caret {
+  0%, 100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #764ba2;
+  }
+}
 
-    @keyframes blink-caret {
-
-      from,
-      to {
-        border-color: transparent;
-      }
-
-      50% {
-        border-color: #764ba2;
-      }
-    }
 
     .form-input {
       transition: all 0.3s ease;
