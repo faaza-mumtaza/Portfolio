@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Coming Soon</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+  /* Reset and base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #1a1a1a 0%, #222222 100%);
+    color: #e0e0e0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  /* Container */
+  .container {
+    max-width: 480px;
+  }
+
+  /* Heading */
+  h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: 0.1em;
+    color: #ffffff;
+    position: relative;
+  }
+
+  /* Subheading */
+  p {
+    font-size: 1.25rem;
+    color: #bbbbbb;
+    margin-bottom: 40px;
+    line-height: 1.5;
+    user-select: none;
+  }
+
+  /* Animated underline bar */
+  h1::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -12px;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #8b5cf6, #06b6d4);
+    border-radius: 2px;
+    transform: translateX(-50%);
+    animation: pulseBar 2.5s ease-in-out infinite;
+  }
+
+  @keyframes pulseBar {
+    0%, 100% {
+      opacity: 0.3;
+      width: 60px;
+      box-shadow: none;
+    }
+    50% {
+      opacity: 1;
+      width: 90px;
+      box-shadow: 0 0 12px 4px rgba(107, 120, 255, 0.4);
+    }
+  }
+
+  /* Button-like hint */
+  .hint {
+    padding: 14px 36px;
+    background: transparent;
+    border: 2px solid #8b5cf6;
+    border-radius: 28px;
+    color: #8b5cf6;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    cursor: default;
+    user-select: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-block;
+  }
+  .hint:hover {
+    background-color: #8b5cf6;
+    color: #fff;
+    box-shadow: 0 0 20px #8b5cf6;
+  }
+
+  /* Responsive text scaling */
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 3rem;
+    }
+    p {
+      font-size: 1.1rem;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="container" role="main" aria-labelledby="coming-soon-title">
+    <h1 id="coming-soon-title">Coming Soon</h1>
+    <p>We’re crafting something exciting just for you. Stay tuned and keep your curiosity alive.</p>
+    <div class="hint" tabindex="0" aria-label="Curiosity hint">Can’t wait? Check back soon!</div>
+  </div>
+</body>
+</html>
+
