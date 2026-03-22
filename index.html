@@ -29,7 +29,7 @@
       font-family: "Poppins", sans-serif;
       overflow-x: hidden;
       line-height: 1.6;
-      background: #fff;
+      background: #ffffff;
     }
 
     .gradient-bg {
@@ -177,7 +177,12 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+      background: linear-gradient(
+        90deg,
+        rgba(255,255,255,0.1),
+        rgba(255,255,255,0.3),
+        rgba(255,255,255,0.1)
+      );
       transition: all 0.6s ease;
     }
 
@@ -208,27 +213,32 @@
       to { background-position: 200% center; }
     }
 
-    .cursor-glow {
-      width: 220px;
-      height: 220px;
-      border-radius: 9999px;
-      position: fixed;
-      left: 0;
-      top: 0;
-      transform: translate(-50%, -50%);
-      background: radial-gradient(circle, rgba(102,126,234,0.15) 0%, rgba(102,126,234,0) 70%);
-      pointer-events: none;
-      z-index: 0;
-      filter: blur(10px);
+    .form-input {
+      transition: all 0.3s ease;
     }
 
     .form-input:focus {
-      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.12);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+    }
+
+    .cursor-glow {
+      height: 220px;
+      width: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(102, 126, 234, 0.15) 0%, rgba(102, 126, 234, 0) 70%);
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      filter: blur(8px);
     }
   </style>
 </head>
-<body class="text-gray-800">
 
+<body class="text-gray-800">
   <div class="cursor-glow"></div>
 
   <nav class="navbar-fixed">
@@ -305,7 +315,7 @@
           <img
             src="assets/profile.jpg"
             alt="Profile"
-            class="relative rounded-lg w-full max-w-md border-2 border-white border-opacity-30 shadow-2xl floating"
+            class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-[420px] lg:h-[420px] rounded-full object-cover border-4 border-white border-opacity-30 shadow-2xl floating mx-auto"
           />
         </div>
       </div>
@@ -314,7 +324,9 @@
 
   <section id="about" class="bg-white py-12 sm:py-16 lg:py-20 px-4 sm:px-6 relative z-10">
     <div class="container mx-auto max-w-7xl">
-      <h2 class="section-heading text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-gray-800" data-aos="fade-up">About Me</h2>
+      <h2 class="section-heading text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-gray-800" data-aos="fade-up">
+        About Me
+      </h2>
       <p class="text-gray-600 mb-8 sm:mb-12 text-sm sm:text-base" data-aos="fade-up" data-aos-delay="100">
         A little introduction about my background and what I do
       </p>
@@ -379,7 +391,9 @@
 
   <section id="skills" class="bg-gray-50 py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
     <div class="container mx-auto max-w-7xl">
-      <h2 class="section-heading text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-gray-800" data-aos="fade-up">Technical Skills</h2>
+      <h2 class="section-heading text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-gray-800" data-aos="fade-up">
+        Technical Skills
+      </h2>
       <p class="text-gray-600 mb-8 sm:mb-12 text-sm sm:text-base" data-aos="fade-up" data-aos-delay="100">
         Technologies and tools I work with daily
       </p>
@@ -390,11 +404,21 @@
             <i class="fas fa-code"></i> Frontend
           </h3>
           <div class="flex flex-wrap gap-2 sm:gap-3">
-            <span class="skill-item bg-gray-100 px-3 py-2 rounded text-sm"><i class="fab fa-html5 text-indigo-600"></i> HTML5</span>
-            <span class="skill-item bg-gray-100 px-3 py-2 rounded text-sm"><i class="fab fa-css3 text-indigo-600"></i> CSS3</span>
-            <span class="skill-item bg-gray-100 px-3 py-2 rounded text-sm"><i class="fab fa-js text-indigo-600"></i> JavaScript</span>
-            <span class="skill-item bg-gray-100 px-3 py-2 rounded text-sm"><i class="fab fa-bootstrap text-indigo-600"></i> Bootstrap</span>
-            <span class="skill-item bg-gray-100 px-3 py-2 rounded text-sm"><i class="fas fa-wind text-indigo-600"></i> Tailwind</span>
+            <span class="skill-item bg-gray-100 px-3 py-2 rounded text-sm">
+              <i class="fab fa-html5 text-indigo-600"></i> HTML5
+            </span>
+            <span class="skill-item bg-gray-100 px-3 py-2 rounded text-sm">
+              <i class="fab fa-css3 text-indigo-600"></i> CSS3
+            </span>
+            <span class="skill-item bg-gray-100 px-3 py-2 rounded text-sm">
+              <i class="fab fa-js text-indigo-600"></i> JavaScript
+            </span>
+            <span class="skill-item bg-gray-100 px-3 py-2 rounded text-sm">
+              <i class="fab fa-bootstrap text-indigo-600"></i> Bootstrap
+            </span>
+            <span class="skill-item bg-gray-100 px-3 py-2 rounded text-sm">
+              <i class="fas fa-wind text-indigo-600"></i> Tailwind
+            </span>
           </div>
         </div>
 
@@ -403,10 +427,18 @@
             <i class="fas fa-server"></i> Backend
           </h3>
           <div class="flex flex-wrap gap-2 sm:gap-3">
-            <span class="skill-item bg-gray-100 px-3 py-2 rounded text-sm"><i class="fab fa-laravel text-indigo-600"></i> Laravel</span>
-            <span class="skill-item bg-gray-100 px-3 py-2 rounded text-sm"><i class="fab fa-php text-indigo-600"></i> PHP</span>
-            <span class="skill-item bg-gray-100 px-3 py-2 rounded text-sm"><i class="fas fa-database text-indigo-600"></i> MySQL</span>
-            <span class="skill-item bg-gray-100 px-3 py-2 rounded text-sm"><i class="fab fa-node-js text-indigo-600"></i> Node.js</span>
+            <span class="skill-item bg-gray-100 px-3 py-2 rounded text-sm">
+              <i class="fab fa-laravel text-indigo-600"></i> Laravel
+            </span>
+            <span class="skill-item bg-gray-100 px-3 py-2 rounded text-sm">
+              <i class="fab fa-php text-indigo-600"></i> PHP
+            </span>
+            <span class="skill-item bg-gray-100 px-3 py-2 rounded text-sm">
+              <i class="fas fa-database text-indigo-600"></i> MySQL
+            </span>
+            <span class="skill-item bg-gray-100 px-3 py-2 rounded text-sm">
+              <i class="fab fa-node-js text-indigo-600"></i> Node.js
+            </span>
           </div>
         </div>
 
@@ -415,10 +447,18 @@
             <i class="fas fa-mobile-alt"></i> Mobile
           </h3>
           <div class="flex flex-wrap gap-2 sm:gap-3">
-            <span class="skill-item bg-gray-100 px-3 py-2 rounded text-sm"><i class="fab fa-flutter text-indigo-600"></i> Flutter</span>
-            <span class="skill-item bg-gray-100 px-3 py-2 rounded text-sm"><i class="fas fa-code text-indigo-600"></i> Dart</span>
-            <span class="skill-item bg-gray-100 px-3 py-2 rounded text-sm"><i class="fab fa-git-alt text-indigo-600"></i> Git</span>
-            <span class="skill-item bg-gray-100 px-3 py-2 rounded text-sm"><i class="fas fa-tools text-indigo-600"></i> DevTools</span>
+            <span class="skill-item bg-gray-100 px-3 py-2 rounded text-sm">
+              <i class="fab fa-flutter text-indigo-600"></i> Flutter
+            </span>
+            <span class="skill-item bg-gray-100 px-3 py-2 rounded text-sm">
+              <i class="fas fa-code text-indigo-600"></i> Dart
+            </span>
+            <span class="skill-item bg-gray-100 px-3 py-2 rounded text-sm">
+              <i class="fab fa-git-alt text-indigo-600"></i> Git
+            </span>
+            <span class="skill-item bg-gray-100 px-3 py-2 rounded text-sm">
+              <i class="fas fa-tools text-indigo-600"></i> DevTools
+            </span>
           </div>
         </div>
       </div>
@@ -427,7 +467,9 @@
 
   <section id="projects" class="bg-white py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
     <div class="container mx-auto max-w-7xl">
-      <h2 class="section-heading text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-gray-800" data-aos="fade-up">Featured Projects</h2>
+      <h2 class="section-heading text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-gray-800" data-aos="fade-up">
+        Featured Projects
+      </h2>
       <p class="text-gray-600 mb-8 sm:mb-12 text-sm sm:text-base" data-aos="fade-up" data-aos-delay="100">
         Showcasing my latest work and experience
       </p>
@@ -628,7 +670,9 @@
 
   <section class="bg-white py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
     <div class="container mx-auto max-w-7xl">
-      <h2 class="section-heading text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-gray-800" data-aos="fade-up">What Clients Say</h2>
+      <h2 class="section-heading text-2xl sm:text-3xl font-bold mb-8 sm:mb-12 text-gray-800" data-aos="fade-up">
+        What Clients Say
+      </h2>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-8 sm:mt-12">
         <div class="testimonial-card bg-gray-50 p-5 sm:p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="0">
@@ -678,7 +722,9 @@
 
   <section id="contact" class="bg-gray-50 py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
     <div class="container mx-auto max-w-7xl">
-      <h2 class="section-heading text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-gray-800" data-aos="fade-up">Get In Touch</h2>
+      <h2 class="section-heading text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 text-gray-800" data-aos="fade-up">
+        Get In Touch
+      </h2>
       <p class="text-gray-600 mb-8 sm:mb-12 text-sm sm:text-base" data-aos="fade-up" data-aos-delay="100">
         Let's discuss your next project
       </p>
@@ -827,18 +873,39 @@
   </button>
 
   <script>
-    AOS.init({ duration: 600, once: true, offset: 200 });
+    AOS.init({
+      duration: 600,
+      once: false,
+      offset: 200
+    });
 
     const backToTop = document.getElementById("backToTop");
+    let lastScrollY = window.scrollY || window.pageYOffset;
+
+    function resetAnimations() {
+      document.querySelectorAll("[data-aos]").forEach((el) => {
+        el.classList.remove("aos-animate");
+        el.classList.remove("aos-init");
+      });
+      AOS.refreshHard();
+    }
 
     window.addEventListener("scroll", () => {
-      if (window.pageYOffset > 300) {
+      const currentScrollY = window.scrollY || window.pageYOffset;
+
+      if (currentScrollY > 300) {
         backToTop.classList.add("opacity-100", "visible");
         backToTop.classList.remove("opacity-0", "invisible");
       } else {
         backToTop.classList.add("opacity-0", "invisible");
         backToTop.classList.remove("opacity-100", "visible");
       }
+
+      if (currentScrollY === 0 && lastScrollY > 0) {
+        resetAnimations();
+      }
+
+      lastScrollY = currentScrollY;
     });
 
     document.getElementById("contactForm").addEventListener("submit", function (e) {
